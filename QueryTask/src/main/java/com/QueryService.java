@@ -18,22 +18,7 @@ public class QueryService {
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	/*
-	 * class EmployeeRowMapper implements RowMapper<Map<String,Employee>> {
-	 * 
-	 * @Override public Employee mapRow(ResultSet rs, int rowNum) throws
-	 * SQLException { Employee employee = new Employee();
-	 * employee.setId(rs.getLong("id"));
-	 * employee.setFirstName(rs.getString("first_name"));
-	 * employee.setLastName(rs.getString("last_name"));
-	 * employee.setEmailId(rs.getString("email_address")); return employee; } }
-	 */
-	/*
-	 * public List<Map<String,Employee>> getQueryReport(String query) { return
-	 * jdbcTemplate.query(query, new EmployeeRowMapper());
-	 * 
-	 * }
-	 */
+	
 	
 	
 	public List<Map<String, Object>> getQueryReport(String query){
