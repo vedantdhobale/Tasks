@@ -13,16 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class QueryController {
+
+	
+	@Autowired
+	private QueryService queryService;
 	
 	
 	
 	
 
-	@GetMapping("/report")
-	public String showReport( Model model) {
+	@GetMapping("/report/{tableName}")
+	public String showReport(@PathVariable String tableName, Model model) {
 	    
-		String query="Select * from employees";
-               //String query="Select * from department
+		String query="Select * from "+tableName;
+		System.out.println("Select * from "+tableName);
 	    List<Map<String, Object>> result = queryService.getQueryReport(query);
 	    
 	    model.addAttribute("result", result);
